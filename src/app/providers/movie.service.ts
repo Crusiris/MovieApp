@@ -40,4 +40,25 @@ export class MovieService {
       .jsonp(URL, "callback=JSONP_CALLBACK")
       .pipe(map(res => res));
   }
+
+  getCartelera() {
+    // /discover/movie?primary_release_date.gte=2014-09-15&primary_release_date.lte=2014-10-22
+    const hoy = new Date();
+    const hasta = new Date();
+    hasta.setDate(hoy.getDate() - 30); // 30 días atrás
+    const txHoy =
+      hoy.getFullYear() + "-" + (hoy.getMonth() + 1) + "-" + hoy.getDate();
+    const txHasta =
+      hasta.getFullYear() +
+      "-" +
+      (hasta.getMonth() + 1) +
+      "-" +
+      hasta.getDate();
+    const request = `/discover/movie?primary_release_date.gte=${txHasta}&primary_release_date.lte=${txHoy}`;
+    // console.log('hoy:', txHoy, ' hasta:', txHasta);
+    const url = this.getUrl(request);
+    return this.httpc
+      .jsonp(url, "callback=JSONP_CALLBACK")
+      .pipe(map(res => res));
+  }
 }
