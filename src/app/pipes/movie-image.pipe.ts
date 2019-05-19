@@ -5,6 +5,9 @@ import { Pipe, PipeTransform } from "@angular/core";
 })
 export class MovieImagePipe implements PipeTransform {
   transform(pelicula: any): any {
+    if (!pelicula) {
+      return "assets/img/noimage.jpg";
+    }
     let url = "http://image.tmdb.org/t/p/w500";
 
     if (pelicula.backdrop_path) {
