@@ -8,7 +8,7 @@ import { MovieService } from "../../providers/movie.service";
 export class HomeComponent {
   moviPopular: any[] = [];
   moviPopularKids: any[] = [];
-  movieCartelera: any[] = [];
+  movieCartelera: any;
 
   constructor(public serviceMovie: MovieService) {
     this.serviceMovie.getCartelera().subscribe((data: any) => {

@@ -10,21 +10,22 @@
   <h1>Cartelera</h1>
   <hr>
 
-  <div class="row">
+  <div class="row" *ngIf="movieCartelera">
 
     <div class=" col-sm-6">
+
       <div class="row">
         <div class="col-md-12 div-pic-1"
-          [ngStyle]=" {'background-image': 'url(http://image.tmdb.org/t/p/w500/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg)'}">
+          [ngStyle]=" {'background-image': 'url( '+ ( movieCartelera[0] | movieImage ) +')'}">
         </div>
       </div>
 
       <div class="row">
         <div class="col-sm-6 div-pic-2"
-          [ngStyle]=" {'background-image': 'url(http://image.tmdb.org/t/p/w500/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg)'}">
+          [ngStyle]=" {'background-image': 'url('+ ( movieCartelera[1] | movieImage ) +')'}">
         </div>
         <div class="col-sm-6 div-pic-2"
-          [ngStyle]=" {'background-image': 'url(http://image.tmdb.org/t/p/w500/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg)'}">
+          [ngStyle]=" {'background-image': 'url('+ ( movieCartelera[2] | movieImage ) +')'}">
         </div>
       </div>
 
@@ -33,15 +34,15 @@
     <div class=" col-sm-6">
       <div class="row">
         <div class="col-sm-6 div-pic-2"
-          [ngStyle]=" {'background-image': 'url(http://image.tmdb.org/t/p/w500/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg)'}">
+          [ngStyle]=" {'background-image': 'url('+ ( movieCartelera[3] | movieImage ) +')'}">
         </div>
         <div class="col-sm-6 div-pic-2"
-          [ngStyle]=" {'background-image': 'url(http://image.tmdb.org/t/p/w500/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg)'}">
+          [ngStyle]=" {'background-image': 'url('+ ( movieCartelera[4] | movieImage ) +')'}">
         </div>
       </div>
       <div class="row">
         <div class="col-md-12 div-pic-1"
-          [ngStyle]=" {'background-image': 'url(http://image.tmdb.org/t/p/w500/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg)'}">
+          [ngStyle]=" {'background-image': 'url('+ ( movieCartelera[5] | movieImage ) +')'}">
         </div>
       </div>
     </div>

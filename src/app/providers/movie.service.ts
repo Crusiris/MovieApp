@@ -24,7 +24,7 @@ export class MovieService {
   getPopular() {
     const requets: string = "/discover/movie?sort_by=popularity.desc";
     const URL: string = this.getUrl(requets);
-    console.log(URL);
+
     return this.httpc
       .jsonp(URL, "callback=JSONP_CALLBACK")
       .pipe(map(res => res));
@@ -35,7 +35,7 @@ export class MovieService {
     const request: string =
       "/discover/movie?certification_country=US&certification.lte=G&sort_by=popularity.desc";
     const URL: string = this.getUrl(request);
-    console.log(URL);
+
     return this.httpc
       .jsonp(URL, "callback=JSONP_CALLBACK")
       .pipe(map(res => res));

@@ -13,10 +13,20 @@ import { NavbarComponent } from "./components/shared/navbar/navbar.component";
 import { HomeComponent } from "./components/home/home.component";
 import { SearchComponent } from "./components/search/search.component";
 import { HttpClientModule, HttpClientJsonpModule } from "@angular/common/http";
-import { PeliculaComponent } from './components/pelicula/pelicula.component';
+import { PeliculaComponent } from "./components/pelicula/pelicula.component";
+
+//Pipes
+import { MovieImagePipe } from "./pipes/movie-image.pipe";
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, HomeComponent, SearchComponent, PeliculaComponent],
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    HomeComponent,
+    SearchComponent,
+    PeliculaComponent,
+    MovieImagePipe
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,
