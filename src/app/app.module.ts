@@ -1,5 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+import { FormsModule } from "@angular/forms";
 
 //Providers
 // import { MovieService } from "./providers/movie.service";
@@ -17,7 +18,7 @@ import { PeliculaComponent } from "./components/pelicula/pelicula.component";
 
 //Pipes
 import { MovieImagePipe } from "./pipes/movie-image.pipe";
-import { GaleriaComponent } from './components/home/galeria.component';
+import { GaleriaComponent } from "./components/home/galeria.component";
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { GaleriaComponent } from './components/home/galeria.component';
     BrowserModule,
     HttpClientModule,
     HttpClientJsonpModule,
-    APP_ROUTING
+    APP_ROUTING,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

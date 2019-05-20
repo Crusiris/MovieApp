@@ -61,4 +61,14 @@ export class MovieService {
       .jsonp(url, "callback=JSONP_CALLBACK")
       .pipe(map(res => res));
   }
+
+  buscarPelicula(texto: string) {
+    const url = this.getUrl(
+      `/search/movie?query=${texto}&sort_by=popularity.desc`
+    );
+
+    return this.httpc
+      .jsonp(url, "callback=JSONP_CALLBACK")
+      .pipe(map(res => res));
+  }
 }
