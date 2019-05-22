@@ -9,6 +9,8 @@ export class MovieService {
   private apikey: string = "2d30c2fbc35f4c72501b77945421bbc9";
   private urlMoviedb: string = "https://api.themoviedb.org/3";
 
+  peliculas: any[] = [];
+
   //https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=2d30c2fbc35f4c72501b77945421bbc9
 
   constructor(private httpc: HttpClient) {
@@ -67,8 +69,12 @@ export class MovieService {
       `/search/movie?query=${texto}&sort_by=popularity.desc`
     );
 
-    return this.httpc
-      .jsonp(url, "callback=JSONP_CALLBACK")
-      .pipe(map(res => res));
+    return this.httpc.jsonp(url, "callback=JSONP_CALLBACK").pipe(
+      map((res: any) => {
+        this.peliculas = res.results;
+        console.log(res);
+        return res.results;
+      })
+    );
   }
 }

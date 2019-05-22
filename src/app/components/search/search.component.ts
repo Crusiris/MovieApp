@@ -12,14 +12,13 @@ export class SearchComponent implements OnInit {
   constructor(public serviceMovie: MovieService) {}
 
   ngOnInit() {}
-
   buscarPelicula() {
     if (this.buscar.length == 0) {
       return;
     }
     this.serviceMovie.buscarPelicula(this.buscar).subscribe((data: any) => {
-      console.log(data.results);
-      // this.moviefind = data.results;
+      // console.log(data.results);
+      this.buscarPelicula = data.results;
     });
   }
 }
