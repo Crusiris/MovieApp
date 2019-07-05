@@ -21,8 +21,12 @@
             </p>
             <p>
                 Popularidad: <span class="badge badge-primary">{{movie.popularity | number:".0-0"}}/10</span>
+                <br> Voto promedio: <span class="badge badge-primary">{{movie.vote_average}}</span>
             </p>
-            <br> Voto promedio: <span class="badge badge-primary">{{movie.vote_average}}</span>
+
+            <button [routerLink]="['/'+regresarA]" type="button" class="btn btn-outline-danger">
+                Regresar
+            </button>
 
         </div>
 
