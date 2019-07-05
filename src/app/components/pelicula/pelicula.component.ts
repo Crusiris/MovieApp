@@ -12,13 +12,18 @@ import { ActivatedRoute} from '@angular/router';
 export class PeliculaComponent implements OnInit {
   movie: any;
   regresarA: string = "";
+  busqueda: string = "";
 
   constructor( public serviceMovie: MovieService,
     public _activatedRoute: ActivatedRoute) { 
 
       this._activatedRoute.params.subscribe(parametros => {
         console.log(parametros);
-        this.regresarA = parametros['pag'];
+        this.regresarA = parametros['page'];
+        console.log('page')
+        if (parametros['busqueda']){
+         this.busqueda = parametros['busqueda'];
+        }
 
         this.serviceMovie.getmovie(parametros['id'])
            .subscribe( res => {

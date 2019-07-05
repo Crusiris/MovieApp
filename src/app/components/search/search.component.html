@@ -10,14 +10,14 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row animated fadeIn fast">
         <div class="card-columns">
             <div class="card" *ngFor=" let pelicula of serviceMovie.peliculas">
                 <img [src]="pelicula | movieImage" class="card-img-top" [alt]="pelicula">
                 <div class="card-body">
                     <h5 class="card-title">{{pelicula.original_title}}</h5>
                     <p class="card-text text-justify">{{pelicula.overview | slice:0:250}}...</p>
-                    <button type="button" class="btn-outline-primary btn-block"> Ver mas ...</button>
+                    <button [routerLink]="['/pelicula', pelicula.id, 'search']" type="button" class="btn-outline-primary btn-block"> Ver mas ...</button>
                 </div>
             </div>
         </div>
