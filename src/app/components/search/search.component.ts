@@ -7,7 +7,7 @@ import { ActivatedRoute } from "@angular/router";
   templateUrl: "./search.component.html",
   styles: []
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent{
   buscar: string = "";
 
   constructor(
@@ -18,19 +18,18 @@ export class SearchComponent implements OnInit {
       console.log(parametros);
       if (parametros["texto"]) {
         this.buscar = parametros["texto"];
-        this.buscarPelicula();
+        this.buscarPeliculas();
       }
     });
   }
 
-  ngOnInit() {}
-  buscarPelicula() {
+  buscarPeliculas() {
     if (this.buscar.length == 0) {
       return;
     }
     this.serviceMovie.buscarPelicula(this.buscar).subscribe((data: any) => {
       // console.log(data.results);
-      this.buscarPelicula = data.results;
+      this.buscarPeliculas = data.results;
     });
   }
 }

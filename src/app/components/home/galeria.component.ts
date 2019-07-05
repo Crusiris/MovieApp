@@ -6,9 +6,9 @@ import { Component, OnInit, Input } from "@angular/core";
   styles: []
 })
 export class GaleriaComponent implements OnInit {
-  @Input("peliculas") peliculas;
+  @Input("peliculas") peliculas: any[];
   @Input("titulo") titulo;
-
+  
   constructor() {}
 
   ngOnInit() {}

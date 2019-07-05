@@ -43,6 +43,16 @@ export class MovieService {
       .pipe(map(res => res));
   }
 
+  getmovie(id:string) {
+    const requets: string = `/movie/${ id }?`
+    const URL: string = this.getUrl(requets);
+
+    return this.httpc
+      .jsonp(URL, "callback=JSONP_CALLBACK")
+      .pipe(map(res => res));
+  }
+
+
   getCartelera() {
     // /discover/movie?primary_release_date.gte=2014-09-15&primary_release_date.lte=2014-10-22
     const hoy = new Date();
